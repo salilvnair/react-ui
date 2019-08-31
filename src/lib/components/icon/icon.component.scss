@@ -1,0 +1,86 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    vertical-align: middle;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+
+    cursor: pointer;
+
+    &.md-18 { font-size: 18px; }
+    &.md-24 { font-size: 24px; }
+    &.md-36 { font-size: 36px; }
+    &.md-48 { font-size: 48px; }
+
+    &.pure-icon {
+        line-height: 0 !important;
+        padding: 0 !important;
+        min-width: 0 !important;
+        border-radius: 50% !important;
+    }
+
+    &.primary {
+        color: #283593;
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #3d4eb6 radial-gradient(circle, transparent 1%, #3d4eb6 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #868ec2;
+          background-size: 100%;
+          transition: background 0s;
+        }
+      }
+
+      &.warn {
+        color: #f44336;
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #e44b40 radial-gradient(circle, transparent 1%, #e44b40 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #c28686;
+          background-size: 100%;
+          transition: background 0s;
+        }
+      }
+    
+      &.accent {
+        color:  #ff4081;
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #f14a82 radial-gradient(circle, transparent 1%, #f14a82 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #c28696;
+          background-size: 100%;
+          transition: background 0s;
+        }
+      }
+}
