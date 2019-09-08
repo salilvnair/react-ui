@@ -29,11 +29,20 @@
     &.md-36 { font-size: 36px; }
     &.md-48 { font-size: 48px; }
 
+    &[disabled] {
+      cursor: not-allowed;
+    }
+
     &.pure-icon {
         line-height: 0 !important;
         padding: 0 !important;
         min-width: 0 !important;
         border-radius: 50% !important;
+    }
+
+    &.light {
+      color: rgba(204, 204, 204, 0.6);
+      background-blend-mode: lighten;
     }
 
     &.primary {

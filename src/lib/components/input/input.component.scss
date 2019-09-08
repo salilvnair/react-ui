@@ -160,6 +160,7 @@
 .input-standard > textarea:disabled {
     border-bottom-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
     color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    cursor: not-allowed;
 }
 
 .input-standard > input:disabled + span,
@@ -375,8 +376,8 @@
 .input-outlined > textarea:disabled + span {
     border-color: RGBA(var(--pure-material-safari-helper1), 0.38) !important;
     border-top-color: transparent !important;
-    color: RGBA(var(--pure-material-safari-helper1), 0.38);
-    pointer-events: none;
+    cursor: not-allowed;
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
 }
 
 .input-outlined > input:disabled + span::before,
@@ -583,6 +584,7 @@
     border-bottom-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
     color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
     background-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.24);
+    cursor: not-allowed;
 }
 
 .input-filled > input:disabled + span,

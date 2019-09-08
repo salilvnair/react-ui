@@ -175,7 +175,7 @@
 
 .checkbox-container > input:disabled + span {
     color: rgba(0, 0, 0, 0.38);
-    cursor: initial;
+    cursor: not-allowed;
 }
 
 .checkbox-container > input:disabled + span::before {

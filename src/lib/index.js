@@ -4,3 +4,4 @@ export * from "./components/checkbox/checkbox.component";
 export * from "./components/silder/slider.component";
 export * from "./components/loading/loading.component";
 export * from "./components/input/input.component";
+export * from "./components/expansion-panel/expansion-panel.component";

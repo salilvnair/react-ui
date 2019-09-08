@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from "react-dom";
-import { ButtonDemo, IconDemo, CheckboxDemo, SliderDemo, LoadingDemo, InputDemo} from './demo';
+import { ButtonDemo, IconDemo, CheckboxDemo, SliderDemo, LoadingDemo, InputDemo, ExpansionPanelDemo} from './demo';
 const App = () => (
   <div className="demo-app">
+      <ExpansionPanelDemo />
       <ButtonDemo />
       <IconDemo />
       <CheckboxDemo />
