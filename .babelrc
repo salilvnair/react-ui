@@ -1,3 +1,3 @@
 { "presets": [  "minify",
-        ["react-app", { "absoluteRuntime": false }]
+        ["react-app", { "absoluteRuntime": false ,"minify":"minify"}]
     ] }
