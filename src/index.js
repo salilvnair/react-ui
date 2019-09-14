@@ -8,10 +8,12 @@ import {
         LoadingDemo, 
         InputDemo, 
         ExpansionPanelDemo,
-        AvatarDemo
+        AvatarDemo,
+        ModalDemo
       } from './demo';
 const App = () => (
   <div className="demo-app">
+      <ModalDemo />
       <AvatarDemo />
       <ExpansionPanelDemo />
       <ButtonDemo />

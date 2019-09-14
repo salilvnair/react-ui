@@ -6,3 +6,4 @@ export * from "./components/loading/loading.component";
 export * from "./components/input/input.component";
 export * from "./components/expansion-panel/expansion-panel.component";
 export * from "./components/avatar/avatar.component";
+export * from "./components/modal/modal.component";

@@ -4,8 +4,6 @@ import './avatar.component.scss';
 
 export class Avatar extends React.Component {
 
-
-
     letterAvatar (name, size) {
 
         name  = name || '';
@@ -61,7 +59,7 @@ export class Avatar extends React.Component {
                     src={url} 
                     alt={this.props.name?this.props.name:'name'} 
                     title={this.props.name?this.props.name:'name'}
-                    class="avatar">
+                    className="avatar">
                 </img>
                 <div className="footer" title={this.props.name?this.props.name:'name'}>
                     {this.props.name.length>6 ? this.props.name.substring(0,5)+'...': this.props.name.length}
@@ -80,7 +78,7 @@ export class Avatar extends React.Component {
                     src={this.props.url?this.props.url:''} 
                     alt={this.props.name?this.props.name:'name'} 
                     title={this.props.name?this.props.name:'name'}
-                    class="avatar">
+                    className="avatar">
                 </img>
                 <div className="footer" title={this.props.name?this.props.name:'name'}>
                     {this.props.name.length>6 ? this.props.name.substring(0,5)+'...': this.props.name.length}

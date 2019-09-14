@@ -1,3 +1,7 @@
-{ "presets": [  "minify",
-        ["react-app", { "absoluteRuntime": false ,"minify":"minify"}]
+{ "presets": [  ["minify", {
+    "builtIns": false,
+    "evaluate": false,
+    "mangle": false
+  }],
+        ["react-app", { "absoluteRuntime": false }]
     ] }
