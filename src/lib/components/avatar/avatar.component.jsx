@@ -61,9 +61,15 @@ export class Avatar extends React.Component {
                     title={this.props.name?this.props.name:'name'}
                     className="avatar">
                 </img>
-                <div className="footer" title={this.props.name?this.props.name:'name'}>
-                    {this.props.name.length>6 ? this.props.name.substring(0,5)+'...': this.props.name.length}
-                </div>
+                {
+                    this.props.description ? 
+                    <div className="footer" title={this.props.description}>
+                        {
+                            this.props.description.length>maxDescriptionLength?this.props.description.substring(0,maxDescriptionLength)+'...': this.props.description.length
+                        }
+                    </div>
+                    : null
+                }
             </div>
         );
     }
@@ -71,6 +77,7 @@ export class Avatar extends React.Component {
     imageType() {
         const height = this.props.height?this.props.height:50;
         const width = this.props.width?this.props.width:50;
+        const maxDescriptionLength = this.props.maxDescriptionLength?this.props.maxDescriptionLength:this.props.description.length
         return (
             <div style={{display:'inline-block'}}>
                 <img 
@@ -80,9 +87,15 @@ export class Avatar extends React.Component {
                     title={this.props.name?this.props.name:'name'}
                     className="avatar">
                 </img>
-                <div className="footer" title={this.props.name?this.props.name:'name'}>
-                    {this.props.name.length>6 ? this.props.name.substring(0,5)+'...': this.props.name.length}
-                </div>
+                {
+                    this.props.description ? 
+                    <div className="footer" title={this.props.description}>
+                        {
+                            this.props.description.length>maxDescriptionLength?this.props.description.substring(0,maxDescriptionLength)+'...': this.props.description.length
+                        }
+                    </div>
+                    : null
+                }
             </div>
         );
     }
