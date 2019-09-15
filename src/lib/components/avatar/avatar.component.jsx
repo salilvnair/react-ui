@@ -48,21 +48,33 @@ export class Avatar extends React.Component {
         return dataURI;
     }
 
-    letterType() {
+    letterType(isButtonType) {
         const width = this.props.width?this.props.width:50;
         const height = this.props.height?this.props.height:50;
+        let hasDescription = false;
+        if(this.props.description) {
+            hasDescription = true;
+        }
+        let maxDescriptionLength = 0;
+        if(hasDescription) {
+            maxDescriptionLength = this.props.maxDescriptionLength?this.props.maxDescriptionLength:this.props.description.length;
+        }
+        let buttonClass = '';
+        if(isButtonType) {
+            buttonClass = 'ripple';
+        }
         let url = this.letterAvatar(this.props.name?this.props.name:'name', width);
         return (
-            <div style={{display:'inline-block'}}>
+            <div style={{display:'inline-block'}} className={`avatar ${buttonClass}`}>
                 <img 
                     style={{height: height+'px', width: width+'px'}}
                     src={url} 
                     alt={this.props.name?this.props.name:'name'} 
                     title={this.props.name?this.props.name:'name'}
-                    className="avatar">
+                    className={`avatar ${buttonClass}`}>
                 </img>
                 {
-                    this.props.description ? 
+                    hasDescription ? 
                     <div className="footer" title={this.props.description}>
                         {
                             this.props.description.length>maxDescriptionLength?this.props.description.substring(0,maxDescriptionLength)+'...': this.props.description.length
@@ -74,10 +86,21 @@ export class Avatar extends React.Component {
         );
     }
 
-    imageType() {
+    imageType(isButtonType) {
         const height = this.props.height?this.props.height:50;
         const width = this.props.width?this.props.width:50;
-        const maxDescriptionLength = this.props.maxDescriptionLength?this.props.maxDescriptionLength:this.props.description.length
+        let buttonClass = '';
+        if(isButtonType) {
+            buttonClass = 'ripple';
+        }
+        let hasDescription = false;
+        if(this.props.description) {
+            hasDescription = true;
+        }
+        let maxDescriptionLength = 0;
+        if(hasDescription) {
+            maxDescriptionLength = this.props.maxDescriptionLength?this.props.maxDescriptionLength:this.props.description.length;
+        }
         return (
             <div style={{display:'inline-block'}}>
                 <img 
@@ -85,10 +108,10 @@ export class Avatar extends React.Component {
                     src={this.props.url?this.props.url:''} 
                     alt={this.props.name?this.props.name:'name'} 
                     title={this.props.name?this.props.name:'name'}
-                    className="avatar">
+                    className={`avatar ${buttonClass}`}>
                 </img>
                 {
-                    this.props.description ? 
+                    hasDescription ? 
                     <div className="footer" title={this.props.description}>
                         {
                             this.props.description.length>maxDescriptionLength?this.props.description.substring(0,maxDescriptionLength)+'...': this.props.description.length
@@ -103,8 +126,16 @@ export class Avatar extends React.Component {
     render() {
 
         const type = this.props.type?this.props.type: '';
+        let isButtonType = false;
+        let isLetterType = false;
+        if(type.indexOf('button') > -1) {
+            isButtonType = true;
+        }
+        if(type.indexOf('letter') > -1) {
+            isLetterType = true;
+        }
         return (
-            type==='letter'? this.letterType() : this.imageType()
+            isLetterType? this.letterType(isButtonType) : this.imageType(isButtonType)
         );
     }
 

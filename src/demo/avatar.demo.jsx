@@ -40,24 +40,21 @@ export class AvatarDemo extends React.Component {
                         name="SexyBitch@gmail.com" />
                         <div style={{display: 'inline-block'}}>
                             <Button style={{height:'50px', width:'50px'}} type="round icon" color="primary" onClick={() => this.showModal()} >add</Button>
-                            <div className="footer">
-                                Add User
-                            </div>
                         </div>
                     </div>
                     <h1>Avatar Type Letter</h1>
                     <div className="row">
-                        <Avatar type="letter"
+                        <Avatar type="letter button"
                         url="https://www.w3schools.com/howto/img_avatar.png" 
                         name="HandsomeHunk@gmail.com" />
-                        <Avatar type="letter"
-                        url="https://www.w3schools.com/howto/img_avatar.png" 
-                        name="SexyBitch@gmail.com" />
+                        <Button type="round">
+                            <Avatar type="letter"
+                            url="https://www.w3schools.com/howto/img_avatar.png" 
+                            name="UexyBitch@gmail.com" />
+                        </Button>
+                        
                         <div style={{display: 'inline-block'}}>
                             <Button style={{height:'50px', width:'50px'}} type="round icon" color="primary"  onClick={() => this.showModal()}>add</Button>
-                            <div className="footer">
-                                Add User
-                            </div>
                         </div>
                     </div>
                 </div>
