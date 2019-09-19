@@ -21,7 +21,7 @@ export class ExpansionPanel extends React.Component {
         return (
             <div>
                     <button  
-                        ref={this.props.ref}
+                        ref={this.props.setRef}
                         disabled={this.props.disabled ? true : false} className="accordion" 
                         onClick={(e) => this.expandCollapsePanel(e)}>{this.props.header?this.props.header:''}
                     </button>
