@@ -21,6 +21,7 @@ export class ButtonDemo extends React.Component {
                     <h1>Pure Button Icon with ripple effect</h1>
                     <div className="row">
                         <Button type="icon">face</Button>
+                        <Button provider="semantic" type="icon">chess icon</Button>
                         <Button color="primary" type="icon">face</Button>
                         <Button color="warn" type="icon">face</Button>
                         <Button color="accent" type="icon">face</Button>

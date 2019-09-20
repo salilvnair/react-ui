@@ -29,67 +29,67 @@
     &.md-36 { font-size: 36px; }
     &.md-48 { font-size: 48px; }
 
-    &[disabled] {
-      cursor: not-allowed;
+&[disabled] {
+  cursor: not-allowed;
+}
+
+&.pure-icon {
+    line-height: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    border-radius: 50% !important;
+}
+
+&.light {
+  color: rgba(204, 204, 204, 0.6);
+  background-blend-mode: lighten;
+}
+
+&.primary {
+    color: #283593;
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
     }
-
-    &.pure-icon {
-        line-height: 0 !important;
-        padding: 0 !important;
-        min-width: 0 !important;
-        border-radius: 50% !important;
+    &.ripple:hover {
+      background: #3d4eb6 radial-gradient(circle, transparent 1%, #3d4eb6 1%) center/15000%;
     }
-
-    &.light {
-      color: rgba(204, 204, 204, 0.6);
-      background-blend-mode: lighten;
+    &.ripple:active {
+      background-color: #868ec2;
+      background-size: 100%;
+      transition: background 0s;
     }
+  }
 
-    &.primary {
-        color: #283593;
-        &.ripple {
-          background-position: center;
-          transition: background 0.8s;
-        }
-        &.ripple:hover {
-          background: #3d4eb6 radial-gradient(circle, transparent 1%, #3d4eb6 1%) center/15000%;
-        }
-        &.ripple:active {
-          background-color: #868ec2;
-          background-size: 100%;
-          transition: background 0s;
-        }
-      }
+  &.warn {
+    color: #f44336;
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #e44b40 radial-gradient(circle, transparent 1%, #e44b40 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #c28686;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
 
-      &.warn {
-        color: #f44336;
-        &.ripple {
-          background-position: center;
-          transition: background 0.8s;
-        }
-        &.ripple:hover {
-          background: #e44b40 radial-gradient(circle, transparent 1%, #e44b40 1%) center/15000%;
-        }
-        &.ripple:active {
-          background-color: #c28686;
-          background-size: 100%;
-          transition: background 0s;
-        }
-      }
-    
-      &.accent {
-        color:  #ff4081;
-        &.ripple {
-          background-position: center;
-          transition: background 0.8s;
-        }
-        &.ripple:hover {
-          background: #f14a82 radial-gradient(circle, transparent 1%, #f14a82 1%) center/15000%;
-        }
-        &.ripple:active {
-          background-color: #c28696;
-          background-size: 100%;
-          transition: background 0s;
-        }
-      }
+  &.accent {
+    color:  #ff4081;
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #f14a82 radial-gradient(circle, transparent 1%, #f14a82 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #c28696;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
 }

@@ -18,7 +18,7 @@ export class Button extends React.Component {
         return (
             <button className={ `basic ripple ${this.props.color} ${isIcon?'pure-icon':type}` } {...this.props}>
                 { containsIcon? 
-                <Icon size={24} name={this.props.children} />: this.props.children}
+                <Icon provider={this.props.provider} size={24} name={this.props.children} />: this.props.children}
             </button>
         );
     }
