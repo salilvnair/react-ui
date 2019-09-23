@@ -13,7 +13,7 @@ export class ExpansionPanel extends React.Component {
             panel.style.maxHeight = null;
         } 
         else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.maxHeight = "max-content";
         }
     }
 
