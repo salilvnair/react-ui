@@ -6,7 +6,7 @@ export class SemanticUiIcon extends SemanticBase {
         super.render();
         return (
             <span className={ `icon` } {...this.props}>
-                <i className={this.props.name?this.props.name:this.props.children}></i>
+                <i style={{fontSize: this.props.size?this.props.size+'px':'24px'}} className={this.props.name?this.props.name:this.props.children}></i>
             </span>
         );
     }

@@ -7,7 +7,7 @@ export class Icon extends React.Component {
     showMaterialIcons() {
         return (
             <span className={ `icon` } {...this.props}>
-                <i className={`material-icons md-${this.props.size} ${this.props.color}`}>{this.props.name?this.props.name:this.props.children}</i>
+                <i className={`material-icons  ${this.props.color}`} style={{fontSize: this.props.size?this.props.size+'px':'24px'}}>{this.props.name?this.props.name:this.props.children}</i>
             </span>
         );
     }
