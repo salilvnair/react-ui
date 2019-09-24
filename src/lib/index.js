@@ -7,3 +7,5 @@ export * from "./components/input/input.component";
 export * from "./components/expansion-panel/expansion-panel.component";
 export * from "./components/avatar/avatar.component";
 export * from "./components/modal/modal.component";
+export * from "./components/textarea/textarea.component";
+export * from "./components/select/select.component";

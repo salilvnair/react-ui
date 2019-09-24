@@ -9,7 +9,9 @@ import {
         InputDemo, 
         ExpansionPanelDemo,
         AvatarDemo,
-        ModalDemo
+        ModalDemo,
+        TextareaDemo,
+        SelectDemo
       } from './demo';
 const App = () => (
   <div className="demo-app">
@@ -21,7 +23,9 @@ const App = () => (
       <CheckboxDemo />
       <SliderDemo />
       <LoadingDemo />
+      <SelectDemo />
       <InputDemo />
+      <TextareaDemo />
   </div>
 );
 

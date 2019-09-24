@@ -7,3 +7,5 @@ export * from './input.demo';
 export * from './expansion-panel.demo';
 export * from './avatar.demo';
 export * from './modal.demo';
+export * from './textarea.demo';
+export * from './select.demo';

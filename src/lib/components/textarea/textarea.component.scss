@@ -1,0 +1,605 @@
+.input-standard {
+    position: relative;
+    display: inline-block;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+/* Input, Textarea */
+.input-standard > input,
+.input-standard > textarea {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+    border-top: solid 27px transparent;
+    border-bottom: solid 1px RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    padding: 0 0 4px;
+    width: 100%;
+    height: inherit;
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    background-color: transparent;
+    box-shadow: none; /* Firefox */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    caret-color: RGB(var(--pure-material-primary-rgb, 33, 150, 243));
+    transition: border-bottom 0.2s, background-color 0.2s;
+}
+
+/* Span */
+.input-standard > input + span,
+.input-standard > textarea + span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    box-sizing: border-box;
+    padding: 7px 0 0;
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    font-size: 75%;
+    line-height: 18px;
+    pointer-events: none;
+    transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        transform-origin: bottom center;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+    &.primary {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #283593;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+    }
+
+    &.warn {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #f44336;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+    }
+
+    &.accent {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #ff4081;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+    }
+}
+
+/* Hover */
+.input-standard > input:hover,
+.input-standard > textarea:hover {
+    border-bottom-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+}
+
+/* Placeholder-shown */
+.input-standard > input:not(:focus):placeholder-shown + span,
+.input-standard > textarea:not(:focus):placeholder-shown + span {
+    font-size: inherit;
+    line-height: 64px;
+    &.hide-on-placeholder {
+        visibility: hidden;
+    }
+}
+
+/* Focus */
+.input-standard > input:focus,
+.input-standard > textarea:focus {
+    outline: none;
+}
+
+.input-standard > input:focus + span,
+.input-standard > textarea:focus + span {
+    color: black;
+    &.primary {
+        color: #283593;
+    }
+
+    &.warn {
+        color: #f44336;
+    }
+
+    &.accent {
+        color: #ff4081;
+    }
+}
+
+.input-standard > input:focus + span::before,
+.input-standard > textarea:focus + span::before {
+    opacity: 0.12;
+}
+
+.input-standard > input:focus + span::after,
+.input-standard > textarea:focus + span::after {
+    transform: scale(1);
+}
+
+/* Disabled */
+.input-standard > input:disabled,
+.input-standard > textarea:disabled {
+    border-bottom-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+.input-standard > input:disabled + span,
+.input-standard > textarea:disabled + span {
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .input-standard > input,
+        .input-standard > input + span,
+        .input-standard > input + span::after,
+        .input-standard > textarea,
+        .input-standard > textarea + span,
+        .input-standard > textarea + span::after {
+            transition-duration: 0.1s;
+        }
+    }
+}
+
+
+.input-outlined {
+    --pure-material-safari-helper1: RGB(0, 0, 0);
+    &.primary {
+        --pure-material-safari-helper1: #283593;
+    }
+
+    &.warn {
+        --pure-material-safari-helper1: #f44336;
+    }
+
+    &.accent {
+        --pure-material-safari-helper1: #ff4081;
+    }
+    position: relative;
+    display: inline-block;
+    padding-top: 6px;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+/* Input, Textarea */
+.input-outlined > input,
+.input-outlined > textarea {
+    box-sizing: border-box;
+    margin: 0;
+    border: solid 1px; /* Safari */
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.6);
+    border-top-color: transparent;
+    border-radius: 4px;
+    padding: 15px 13px 15px;
+    width: 100%;
+    height: inherit;
+    color: RGBA(var(--pure-material-safari-helper1), 0.87);
+    background-color: transparent;
+    box-shadow: none; /* Firefox */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    caret-color: RGB(var(--pure-material-safari-helper1));
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Span */
+.input-outlined > input + span,
+.input-outlined > textarea + span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.6);
+    width: 100%;
+    max-height: 100%;
+    color: RGBA(var(--pure-material-safari-helper1), 0.6);
+    font-size: 75%;
+    line-height: 15px;
+    cursor: text;
+    transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+/* Corners */
+.input-outlined > input + span::before,
+.input-outlined > input + span::after,
+.input-outlined > textarea + span::before,
+.input-outlined > textarea + span::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    margin-top: 6px;
+    border-top: solid 1px;
+    border-top-color: RGBA(var(--pure-material-safari-helper1), 0.6);
+    min-width: 10px;
+    height: 8px;
+    pointer-events: none;
+    box-shadow: inset 0 1px transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-outlined > input + span::before,
+.input-outlined > textarea + span::before {
+    margin-right: 4px;
+    border-left: solid 1px transparent;
+    border-radius: 4px 0;
+}
+
+.input-outlined > input + span::after,
+.input-outlined > textarea + span::after {
+    flex-grow: 1;
+    margin-left: 4px;
+    border-right: solid 1px transparent;
+    border-radius: 0 4px;
+}
+
+/* Hover */
+.input-outlined:hover > input,
+.input-outlined:hover > textarea {
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.87);
+    border-top-color: transparent;
+}
+
+.input-outlined:hover > input + span::before,
+.input-outlined:hover > textarea + span::before,
+.input-outlined:hover > input + span::after,
+.input-outlined:hover > textarea + span::after {
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.87);
+}
+
+.input-outlined:hover > input:not(:focus):placeholder-shown,
+.input-outlined:hover > textarea:not(:focus):placeholder-shown {
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.87);
+}
+
+/* Placeholder-shown */
+.input-outlined > input:not(:focus):placeholder-shown,
+.input-outlined > textarea:not(:focus):placeholder-shown {
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.6);
+}
+
+.input-outlined > input:not(:focus):placeholder-shown + span,
+.input-outlined > textarea:not(:focus):placeholder-shown + span {
+    font-size: inherit;
+    line-height: 68px;
+    &.hide-on-placeholder {
+        visibility: hidden;
+    }
+}
+
+
+
+.input-outlined > input:not(:focus):placeholder-shown + span::before,
+.input-outlined > textarea:not(:focus):placeholder-shown + span::before,
+.input-outlined > input:not(:focus):placeholder-shown + span::after,
+.input-outlined > textarea:not(:focus):placeholder-shown + span::after {
+    border-top-color: transparent;
+}
+
+/* Focus */
+.input-outlined > input:focus,
+.input-outlined > textarea:focus {
+    border-top-color: transparent;
+    &.primary {
+        border-right-color:#283593;
+        border-left-color: #283593;
+        border-bottom-color: #283593;
+    }
+
+    &.warn {
+        border-right-color:#f44336;
+        border-left-color: #f44336;
+        border-bottom-color: #f44336;
+    }
+
+    &.accent {
+        border-right-color:#ff4081;
+        border-left-color: #ff4081;
+        border-bottom-color: #ff4081;
+    }
+    box-shadow: inset 1px 0 var(--pure-material-safari-helper1), inset -1px 0 var(--pure-material-safari-helper1), inset 0 -1px var(--pure-material-safari-helper1);
+    outline: none;
+}
+
+.input-outlined > input:focus + span,
+.input-outlined > textarea:focus + span {
+    color: RGB(var(--pure-material-safari-helper1));
+    &.primary {
+        color:#283593;
+    }
+
+    &.warn {
+        color:#f44336;
+    }
+
+    &.accent {
+        color:#ff4081;
+    }
+}
+
+.input-outlined > input:focus + span::before,
+.input-outlined > input:focus + span::after,
+.input-outlined > textarea:focus + span::before,
+.input-outlined > textarea:focus + span::after {
+    border-top-color: var(--pure-material-safari-helper1) !important;
+    box-shadow: inset 0 1px var(--pure-material-safari-helper1);
+}
+
+/* Disabled */
+.input-outlined > input:disabled,
+.input-outlined > input:disabled + span,
+.input-outlined > textarea:disabled,
+.input-outlined > textarea:disabled + span {
+    border-color: RGBA(var(--pure-material-safari-helper1), 0.38) !important;
+    border-top-color: transparent !important;
+    color: RGBA(var(--pure-material-safari-helper1), 0.38);
+    pointer-events: none;
+}
+
+.input-outlined > input:disabled + span::before,
+.input-outlined > input:disabled + span::after,
+.input-outlined > textarea:disabled + span::before,
+.input-outlined > textarea:disabled + span::after {
+    border-top-color: RGBA(var(--pure-material-safari-helper1), 0.38) !important;
+}
+
+.input-outlined > input:disabled:placeholder-shown,
+.input-outlined > input:disabled:placeholder-shown + span,
+.input-outlined > textarea:disabled:placeholder-shown,
+.input-outlined > textarea:disabled:placeholder-shown + span {
+    border-top-color: RGBA(var(--pure-material-safari-helper1), 0.38) !important;
+}
+
+.input-outlined > input:disabled:placeholder-shown + span::before,
+.input-outlined > input:disabled:placeholder-shown + span::after,
+.input-outlined > textarea:disabled:placeholder-shown + span::before,
+.input-outlined > textarea:disabled:placeholder-shown + span::after {
+    border-top-color: transparent !important;
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .input-outlined > input,
+        .input-outlined > input + span,
+        .input-outlined > textarea,
+        .input-outlined > textarea + span,
+        .input-outlined > input + span::before,
+        .input-outlined > input + span::after,
+        .input-outlined > textarea + span::before,
+        .input-outlined > textarea + span::after {
+            transition-duration: 0.1s;
+        }
+    }
+}
+
+
+.input-filled {
+    position: relative;
+    display: inline-block;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+/* Input, Textarea */
+.input-filled > input,
+.input-filled > textarea {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+    border-top: solid 27px transparent;
+    border-bottom: solid 1px RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-radius: 4px 4px 0 0;
+    padding: 0 12px 10px;
+    width: 100%;
+    height: inherit;
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    background-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.04);
+    box-shadow: none; /* Firefox */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    caret-color: RGB(var(--pure-material-primary-rgb, 33, 150, 243));
+    transition: border-bottom 0.2s, background-color 0.2s;
+}
+
+/* Span */
+.input-filled > input + span,
+.input-filled > textarea + span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    box-sizing: border-box;
+    padding: 7px 12px 0;
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    font-size: 75%;
+    line-height: 18px;
+    pointer-events: none;
+    transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: RGB(0,0,0);
+        transform-origin: bottom center;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+    &.primary {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #283593;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+    }
+
+    &.warn {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #f44336;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+    }
+
+    &.accent {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #ff4081;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+    }
+}
+
+
+/* Hover */
+.input-filled > input:hover,
+.input-filled > textarea:hover {
+    border-bottom-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    background-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.08);
+}
+
+/* Placeholder-shown */
+.input-filled > input:not(:focus):placeholder-shown + span,
+.input-filled > textarea:not(:focus):placeholder-shown + span {
+    font-size: inherit;
+    line-height: 64px;
+    &.hide-on-placeholder {
+        visibility: hidden;
+    }
+}
+
+/* Focus */
+.input-filled > input:focus,
+.input-filled > textarea:focus {
+    outline: none;
+}
+
+.input-filled > input:focus + span,
+.input-filled > textarea:focus + span {
+    color: black;
+    &.primary {
+        color: #283593;
+    }
+
+    &.warn {
+        color: #f44336;
+    }
+
+    &.accent {
+        color: #ff4081;
+    }
+}
+
+.input-filled > input:focus + span::before,
+.input-filled > textarea:focus + span::before {
+    opacity: 0.12;
+}
+
+.input-filled > input:focus + span::after,
+.input-filled > textarea:focus + span::after {
+    transform: scale(1);
+}
+
+/* Disabled */
+.input-filled > input:disabled,
+.input-filled > textarea:disabled {
+    border-bottom-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.24);
+}
+
+.input-filled > input:disabled + span,
+.input-filled > textarea:disabled + span {
+    color: RGBA(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .input-filled > input,
+        .input-filled > input + span,
+        .input-filled > input + span::after,
+        .input-filled > textarea,
+        .input-filled > textarea + span,
+        .input-filled > textarea + span::after {
+            transition-duration: 0.1s;
+        }
+    }
+}
